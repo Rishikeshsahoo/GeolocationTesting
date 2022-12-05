@@ -12,7 +12,7 @@ function App() {
     try {
 
        axios
-        .get("http://localhost:7000/")
+        .get("https://geolocationtestingserver.onrender.com/")
         .then((response) => {
           setData(response.data.mainData)
           setOLTData(response.data.OLTData)

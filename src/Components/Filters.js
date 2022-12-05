@@ -63,7 +63,7 @@ export default function Filters({ data, setData }) {
     // console.log(document.getElementById("endDate").value)
     try {
       await axios
-        .post("http://localhost:7000/", {
+        .post("https://geolocationtestingserver.onrender.com/", {
           params: {
            zone:zone,
            circle:circle,
