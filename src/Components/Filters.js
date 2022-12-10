@@ -42,7 +42,7 @@ export default function Filters({ data, setData,windowSize }) {
   const leftBoxStyleAdjusted={
     borderRadius: "10px",
     backgroundColor: "white",
-    height: "27rem",
+    height: "30rem",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -91,18 +91,42 @@ export default function Filters({ data, setData,windowSize }) {
     setCircleList(Array.from(circles));
     setSSAList(Array.from(SSAs));
   }, [zone, SSA, circle]);
+  const showAll=async()=>{
+    try {
+      setZone(null)
+      setCircle(null)
+      setSSA(null)
+      setLeadStatus(null)
 
+      await axios
+        .post("https://acu1stchoice.injobs.careers/addItem/getFilteredData", {
+          params: {
+            zone:"",
+            circle: "",
+            SSA:"",
+            leadStatus: "",
+          },
+        })
+        .then((response) => {
+          setData(response.data.mainData);
+          // console.log(response.data);
+        });
+    } catch (e) {
+      console.log("error 1");
+    }
+  }
   const handleSubmit = async (e) => {
     e.preventDefault();
     
     try {
+      const leadstat=(leadStatus==="Any")?"":leadStatus
       await axios
         .post("https://acu1stchoice.injobs.careers/addItem/getFilteredData", {
           params: {
             zone: zone,
             circle: circle,
             SSA: SSA,
-            leadStatus: leadStatus,
+            leadStatus: leadstat,
           },
         })
         .then((response) => {
@@ -187,7 +211,13 @@ export default function Filters({ data, setData,windowSize }) {
                     submit
                   </button>
                 </div>
+                
               </form>
+              <div onClick={showAll} className="button">
+                  <button className="showAll" type="submit">
+                   show All
+                  </button>
+                </div>
             </Box>
           </Container>
         </Grid>

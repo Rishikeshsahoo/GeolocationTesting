@@ -115,7 +115,20 @@ form .user-details .input-box {
   border-radius: 5px;
   background-color: #24252a;
 }
+.button .showAll {
+  height: 2.5rem;
+  margin-top: 1px;
+  margin-bottom: 5px;
 
+  width: 40%;
+  outline: none;
+  color: white;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  background-color: #EF9A53;
+}
 /* @media only screen and (max-width: 600px) {
     body {
       background-color: lightblue;
