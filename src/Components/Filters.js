@@ -162,7 +162,7 @@ export default function Filters({ data, setData }) {
                         "Any",
                         "TNF",
                         "Cancelled",
-                        "Successful",
+                        "Completed",
                         "Pending",
                       ]}
                       label="Lead Status"
