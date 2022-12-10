@@ -12,12 +12,12 @@ function App() {
     try {
 
        axios
-        .get("https://geolocationtestingserver.onrender.com/")
+        .get("https://acu1stchoice.injobs.careers/addItem/getAllData")
         .then((response) => {
+          console.log("Data Response",response.data)
           setData(response.data.mainData)
           setOLTData(response.data.OLTData)
           setTransEQData(response.data.Trans_EQData)
-          console.log(OLTData)
           let newdata={};
           response.data.forEach((it)=>{
 

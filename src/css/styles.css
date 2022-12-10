@@ -1,20 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@300;400;500;600&display=swap');
-*
-{
+*{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 
 }
+:root {
+    --navyellow: #fff402;
+    --mainyellow: #2B2B2B;
+  }
 body{
     overflow-x: hidden;
-    background-color: #2B2B2B;
+    background-color: var(--mainyellow);
 
 }
 
 #navbar{
-    background-color: #24252A;
+    background-color: var(--navyellow);
 
 
 }
@@ -55,36 +58,29 @@ ul
 
 /*-------------------------FILTER SECTION---------------------*/
 
-.filter-container
-{
-    width:100vw;
-    background-color: #2B2B2B;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Poppins', sans-serif;
-
-}
-
-.container{
-    max-width: 50%;
-    width:100%;
-    background: white;
-    padding: 30px 25px;
-    border-radius: 10px;
-    margin-top: 2rem ;
-    
-    
-}
 
 /*1.56*/
-
+.filters_outer
+{
+    margin-top: 30px;
+   max-width: 95%;
+   
+}
+.outerReactFrag
+{
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
 .title
 {
     font-size: 2rem;
     font-weight: 500;
     display: flex;
     justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container form .user-details
@@ -164,7 +160,7 @@ form .user-details .input-box
     display: flex;
     justify-content: center;
     width:100vw;
-    background-color: #2B2B2B;
+    background-color: var(--mainyellow);
 }
 .map_container
 {

@@ -38,7 +38,7 @@ export default function MapComponent({ dataframe, tabularData,OLTData,Trans_EQDa
   function Map({ dataframe, tabularData }) {
     const [currentZoom, setCurrentZoom] = useState(5.5); //default
     console.log("rendered")
-    console.log(dataframe)
+    // console.log(dataframe)
     
     return (
       <GoogleMap
@@ -56,9 +56,10 @@ export default function MapComponent({ dataframe, tabularData,OLTData,Trans_EQDa
 
           //adding Leads data on the map
           dataframe.map((it)=>{
-            if(it['Latitude'] && it['longitude'])
+            if(it['Latitude'] && it['Longitude'] )
             {
-              addLead({lat:(Number)(it["Latitude"]),lng:(Number)(it['longitude'])},map,it)
+
+              addLead({lat:(Number)(it["Latitude"]),lng:(Number)(it['Longitude'])},map,it)
             }
           })
 
@@ -87,7 +88,7 @@ export default function MapComponent({ dataframe, tabularData,OLTData,Trans_EQDa
               if (it["Latitude"])
                 return new window.google.maps.LatLng(
                   Number(it["Latitude"]),
-                  Number(it["longitude"])
+                  Number(it["Longitude"])
                 );
             })}
           />

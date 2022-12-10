@@ -8,38 +8,38 @@ import blue from "../imgs/square-24.png";
 // _______________________________________Lead addition function_____________________________________________________
 
 export function addLead(latLng, map, it) {
-  console.log(it);
+  console.log("aaya in lib/utils")
   let url = "http://maps.google.com/mapfiles/ms/icons/blue-dot.png";
   let textColor = "";
 
-  if (it["lead Status"] === "Comepleted") {
+  if (it["leadStatus"] === "Completed") {
     url = green;
     textColor="green";
-  } else if (it["lead Status"] === "Pending") {
+  } else if (it["leadStatus"] === "Pending") {
     url = yellow;
     textColor="#8B8000";
-  } else if (it["lead Status"] === "TNF") {
+  } else if (it["leadStatus"] === "TNF") {
     url = red;
     textColor="red";
-  } else if (it["lead Status"] === "Cancelled") {
+  } else if (it["leadStatus"] === "Cancelled") {
     url = black;
     textColor="black";
   }
 
   let c;
-  c = `<h3>${it["Customer Name"]}</h3><br>
+  c = `<h3>${it["CustomerName"]}</h3><br>
         
       <h4>Customer Mobile: ${
-        it["Customer Mobile"] ? it["Customer Mobile"] : "Not defined"
+        it["CustomerMobile"] ? it["CustomerMobile"] : "Not defined"
       }</h4>
       <h4>Customer Email: ${
-        it["Customer Email"] ? it["Customer Email"] : "Not defined"
+        it["CustomerEmail"] ? it["CustomerEmail"] : "Not defined"
       }</h4>
       <h4>Customer plan: ${
-        it["Customer plan"] ? it["Customer plan"] : "Not defined"
+        it["CustomerPlan"] ? it["CustomerPlan"] : "Not defined"
       }</h4>
-      <h4>Lead Status: <span style="color:${textColor};" >${it["lead Status"]}</span></h4>
-      <h4>Lead Type: ${it["Lead type"]}</h4>
+      <h4>Lead Status: <span style="color:${textColor};" >${it["leadStatus"]}</span></h4>
+      <h4>Lead Type: ${it["LeadType"]}</h4>
     `;
   const infowindow = new window.google.maps.InfoWindow({
     content: c,
@@ -74,9 +74,7 @@ export function addOLT(latLng, map, it) {
 
   url = tri;
 
-  // const str=tabularData[it.name.toLowerCase().trim()]
   let c;
-  // if(str)
 
   c = `<h3>OLT Owner: <span style="color:${"blue"};" >${it["OLT_OWNER"]}</span></h3><br>
       <h4>Working Count: ${it["WORKING_COUNT"]}</h4>

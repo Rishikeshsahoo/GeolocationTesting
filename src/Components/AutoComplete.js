@@ -24,7 +24,7 @@ export default function ControllableStates({inputArray,label,setParam,param,disa
         }}
         
         options={inputArray}
-        sx={{ width: 300 }}
+        
         disabled={disabled}
         color="info"
         renderInput={(params) => <TextField color='info' {...params} variant="outlined" label={label} />}
