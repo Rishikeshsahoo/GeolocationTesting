@@ -123,7 +123,7 @@ export default function Filters({ data, setData,windowSize }) {
       >
         <Grid item  xs={12} md={6}>
           <Container className="leftBox"
-            sx={windowSize.innerWidth>=450? leftBoxStyle:leftBoxStyleAdjusted}
+            sx={windowSize>=450? leftBoxStyle:leftBoxStyleAdjusted}
           >
             <Box>
               <div className="title">Filters</div>
@@ -199,7 +199,7 @@ export default function Filters({ data, setData,windowSize }) {
               borderRadius: "10px",
               backgroundColor: "white",
               height: "22rem",
-              display: (windowSize.innerWidth>=450)?"flex":"none",
+              display: (windowSize>=450)?"flex":"none",
               flexDirection: "column",
               justifyContent: "center",
               

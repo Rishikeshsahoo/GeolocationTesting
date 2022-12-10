@@ -8,22 +8,17 @@ function App() {
   const [OLTData, setOLTData] = useState([]);
   const [TransEQData, setTransEQData] = useState([]);
   const [tabularData,setTabularData]=useState({})
-  const [windowSize, setWindowSize] = useState(getWindowSize());
-  console.log(windowSize)
-  useEffect(() => {
-    function handleWindowResize() {
-      setWindowSize(getWindowSize());
-    }
-
-    window.addEventListener('resize', handleWindowResize);
-    return () => {
-      window.removeEventListener('resize', handleWindowResize);
-    };
-  }, []);
-  function getWindowSize() {
-    const {innerWidth, innerHeight} = window;
-    return {innerWidth, innerHeight};
-  }
+  const [width, setWidth]=useState(window.innerWidth)
+   
+ useEffect(
+      function()
+      {
+          window.addEventListener("resize",function ()
+          {
+              setWidth(window.innerWidth)
+          })
+              },[width]
+  )
   useEffect( ()=>{
     try {
 
@@ -52,8 +47,8 @@ function App() {
 ,[])
   return (
     <div className="App">
-      <Navbar windowSize={windowSize}/>
-      <Filters data={data} setData={setData} windowSize={windowSize}/>
+      <Navbar windowSize={width}/>
+      <Filters data={data} setData={setData} windowSize={width}/>
       <MapComponent tabularData={tabularData} dataframe={data} OLTData={OLTData} Trans_EQData={TransEQData} />
      </div>
   );
