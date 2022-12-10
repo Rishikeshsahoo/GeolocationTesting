@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+
 import axios from "axios";
 import stateNames from "../data/states";
 import ComboBox from "./AutoComplete";
-import { Box, Button, Grid } from "@mui/material";
+import { Box, Button, Grid,Hidden } from "@mui/material";
 import { Container } from "@mui/system";
 import rawZoneData from "../data/ZONE_CIRCLE_SSA_Mapping";
 import red from "../imgs/circle-16.png";
@@ -12,7 +13,7 @@ import black from "../imgs/bcircle-16.png";
 import tri from "../imgs/triangle-24.png";
 import blue from "../imgs/square-24.png";
 
-export default function Filters({ data, setData }) {
+export default function Filters({ data, setData,windowSize }) {
   const [zoneData, setZoneData] = useState(rawZoneData);
 
   const zones = new Set([]);
@@ -27,6 +28,25 @@ export default function Filters({ data, setData }) {
   const [SSA, setSSA] = useState(null);
   const [circle, setCircle] = useState(null);
   const [leadStatus, setLeadStatus] = useState(null);
+  
+
+  const leftBoxStyle={
+  borderRadius: "10px",
+  backgroundColor: "white",
+  height: "22rem",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  }
+
+  const leftBoxStyleAdjusted={
+    borderRadius: "10px",
+    backgroundColor: "white",
+    height: "27rem",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    }
 
   useEffect(() => {
     if (zone === null || zone.length < 1 || !zone) {
@@ -74,9 +94,7 @@ export default function Filters({ data, setData }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log(zone, circle, SSA);
-    // console.log(document.getElementById("startDate").value)
-    // console.log(document.getElementById("endDate").value)
+    
     try {
       await axios
         .post("https://acu1stchoice.injobs.careers/addItem/getFilteredData", {
@@ -103,16 +121,9 @@ export default function Filters({ data, setData }) {
         columnSpacing={{ xs: 1, sm: 2, md: 3 }}
         container
       >
-        <Grid item xs={12} md={6}>
-          <Container
-            sx={{
-              borderRadius: "10px",
-              backgroundColor: "white",
-              height: "22rem",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-            }}
+        <Grid item  xs={12} md={6}>
+          <Container className="leftBox"
+            sx={windowSize.innerWidth>=450? leftBoxStyle:leftBoxStyleAdjusted}
           >
             <Box>
               <div className="title">Filters</div>
@@ -180,15 +191,18 @@ export default function Filters({ data, setData }) {
             </Box>
           </Container>
         </Grid>
-        <Grid item md={6}>
+        
+        <Grid  item md={6}>
           <Container
+          className="rightBox"
             sx={{
               borderRadius: "10px",
               backgroundColor: "white",
               height: "22rem",
-              display: "flex",
+              display: (windowSize.innerWidth>=450)?"flex":"none",
               flexDirection: "column",
               justifyContent: "center",
+              
             }}
           >
             <Box>
@@ -237,6 +251,7 @@ export default function Filters({ data, setData }) {
             </Box>
           </Container>
         </Grid>
+        
       </Grid>
     </div>
   );

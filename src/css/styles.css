@@ -1,184 +1,153 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@300;400;500;600&display=swap');
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@300;400;500;600&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 :root {
-    --navyellow: #fff402;
-    --mainyellow: #2B2B2B;
-  }
-body{
-    overflow-x: hidden;
-    background-color: var(--mainyellow);
-
+  --navyellow: #fff402;
+  --mainyellow: #2b2b2b;
+}
+body {
+  overflow-x: hidden;
+  background-color: var(--mainyellow);
 }
 
-#navbar{
-    background-color: var(--navyellow);
-
-
+#navbar {
+  background-color: var(--navyellow);
 }
-.nav__links__link,.linkA,.contact_button
-{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    color: #edf0f1;
-    text-decoration: none;
+.nav__links__link,
+.linkA,
+.contact_button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #edf0f1;
+  text-decoration: none;
 }
-.logo{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-    font-size: 1.5rem;
-    color: #edf0f1;
+.logo {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: #edf0f1;
 }
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.61% 10% 0.61% 7%;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.61% 10% 0.61% 7%;
 }
-ul
-{
-    list-style: none;
-    
+ul {
+  list-style: none;
 }
-.nav li
-{
-    display: inline-block;
-    padding: 0 20px;
-    list-style: none;
-    
+.nav li {
+  display: inline-block;
+  padding: 0 20px;
+  list-style: none;
 }
-
-
 
 /*-------------------------FILTER SECTION---------------------*/
 
-
 /*1.56*/
-.filters_outer
-{
-    margin-top: 30px;
-   max-width: 95%;
-   
+.filters_outer {
+  margin-top: 30px;
+  max-width: 95%;
 }
-.outerReactFrag
-{
-   
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    
+.outerReactFrag {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
-.title
-{
-    font-size: 2rem;
-    font-weight: 500;
-    display: flex;
-    justify-content: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.title {
+  font-size: 2rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.container form .user-details
-{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+.container form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
-form .user-details .input-box
-{
-    width: 320px;
+form .user-details .input-box {
+  width: 320px;
 }
-.user-details .input-box .details
-{
-    display: block;
-    font-weight: 500;
-    margin-top: 20px;
-    margin-bottom: 5px;
+.user-details .input-box .details {
+  display: block;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 5px;
 }
-.user-details .input-box input,.user-details .input-box select
-{
-    height: 40px;
-    width:100%;
-    outline: none;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    padding-left: 15px ;
-    font-size: 17px;
+.user-details .input-box input,
+.user-details .input-box select {
+  height: 40px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 17px;
 }
 
-.button
-{
-    width:100%;
-    /* background-color: red; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.button {
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.button button
-{
-    height: 2.5rem;
-    margin-top: 30px ;
-    margin-bottom: 10px ;
+.button button {
+  height: 2.5rem;
+  margin-top: 30px;
+  margin-bottom: 10px;
 
-    width: 40%;
-    outline: none;
-    color: white;
-    border: none;
-    font-size: 18px;
-    font-weight: 500;
-    border-radius: 5px;
-    background-color: #24252A;
+  width: 40%;
+  outline: none;
+  color: white;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  background-color: #24252a;
 }
 
-@media only screen and (max-width: 600px) {
-    .container{
-        max-width: 97%;
-        width:100%;
-        background: white;
-        padding: 30px 25px;
-        border-radius: 10px;
-        margin-top: 2rem ;
-        
-        
+/* @media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
     }
+  } */
 
-}
-.onClick{
-    background-color: #ccc;
+.onClick {
+  background-color: #ccc;
 }
 /*-----------------------MAP SECTION----------------------------*/
-.map_outer_container
-{
-    margin-top: 70px;
-    display: flex;
-    justify-content: center;
-    width:100vw;
-    background-color: var(--mainyellow);
+.map_outer_container {
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  background-color: var(--mainyellow);
 }
-.map_container
-{
-    height:100vh;
-    width:75%;
-    /* background-color: red; */
-    margin: 2rem 0;
+.map_container {
+  height: 100vh;
+  width: 75%;
+  /* background-color: red; */
+  margin: 2rem 0;
 }
 
-.map_container2
-{
-    height:100%;
-    width:100%;
-    border-radius: 30px;;
+.map_container2 {
+  height: 100%;
+  width: 100%;
+  border-radius: 30px;
 }
 
 @media only screen and (max-width: 600px) {
-    .map_container{
-        width:96%;
-    }
+  .map_container {
+    width: 96%;
+  }
 }
