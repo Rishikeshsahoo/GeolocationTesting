@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {addLead, addOLT, addTrans_eq} from "../lib/utils"
 
 
@@ -16,6 +16,8 @@ export default function MapComponent({ dataframe, tabularData,OLTData,Trans_EQDa
 
 
   const [libraries, setLibraries] = useState(["visualization", "drawing"]);
+  const [toggle,setToggle] = useState(0);
+
 
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
@@ -35,11 +37,9 @@ export default function MapComponent({ dataframe, tabularData,OLTData,Trans_EQDa
     </>
   );
 
-  function Map({ dataframe, tabularData }) {
+  function Map({ dataframe }) {
     const [currentZoom, setCurrentZoom] = useState(5.5); //default
-    console.log("rendered")
     // console.log(dataframe)
-    
     return (
       <GoogleMap
         center={center}
@@ -48,13 +48,15 @@ export default function MapComponent({ dataframe, tabularData,OLTData,Trans_EQDa
         // This onload function is very important
         // All the markers are being loaded here
         onLoad={(map) => {
-          console.log("ran")
 
           map.addListener("zoom_changed", () => {
             setCurrentZoom(map.getZoom());
+            // if(map.getZoom()==6)
+            // setToggle(prev=>prev+1)
           });
 
           //adding Leads data on the map
+          if(dataframe)
           dataframe.map((it)=>{
             if(it['Latitude'] && it['Longitude'] )
             {
@@ -63,7 +65,7 @@ export default function MapComponent({ dataframe, tabularData,OLTData,Trans_EQDa
             }
           })
 
-
+          if(OLTData)
           OLTData.map((it)=>{
             if(it['LATITUDE'] && it['LONGITUDE'])
             {
@@ -71,7 +73,7 @@ export default function MapComponent({ dataframe, tabularData,OLTData,Trans_EQDa
             }
           })
 
-
+          if(Trans_EQData)
           Trans_EQData.map((it)=>{
             if(it['LATITUDE'] && it['LONGITUDE'])
             {

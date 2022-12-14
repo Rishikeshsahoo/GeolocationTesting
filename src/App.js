@@ -10,15 +10,7 @@ function App() {
   const [tabularData,setTabularData]=useState({})
   const [width, setWidth]=useState(window.innerWidth)
    
- useEffect(
-      function()
-      {
-          window.addEventListener("resize",function ()
-          {
-              setWidth(window.innerWidth)
-          })
-              },[width]
-  )
+ 
   useEffect( ()=>{
     try {
 
@@ -48,7 +40,7 @@ function App() {
   return (
     <div className="App">
       <Navbar windowSize={width}/>
-      <Filters data={data} setData={setData} windowSize={width}/>
+      <Filters setOLTData={setOLTData} setTransEQData={setTransEQData} setData={setData} windowSize={width}/>
       <MapComponent tabularData={tabularData} dataframe={data} OLTData={OLTData} Trans_EQData={TransEQData} />
      </div>
   );

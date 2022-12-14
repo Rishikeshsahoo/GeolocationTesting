@@ -13,7 +13,7 @@ import black from "../imgs/bcircle-16.png";
 import tri from "../imgs/triangle-24.png";
 import blue from "../imgs/square-24.png";
 
-export default function Filters({ data, setData,windowSize }) {
+export default function Filters({ setOLTData,setTransEQData,setData,windowSize }) {
   const [zoneData, setZoneData] = useState(rawZoneData);
 
   const zones = new Set([]);
@@ -105,10 +105,13 @@ export default function Filters({ data, setData,windowSize }) {
             circle: "",
             SSA:"",
             leadStatus: "",
-          },
+          }
         })
         .then((response) => {
           setData(response.data.mainData);
+          setOLTData(response.data.OLTData);
+          setTransEQData(response.data.Trans_EQData);
+
           // console.log(response.data);
         });
     } catch (e) {
@@ -131,6 +134,8 @@ export default function Filters({ data, setData,windowSize }) {
         })
         .then((response) => {
           setData(response.data.mainData);
+          setOLTData(response.data.OLTData);
+          setTransEQData(response.data.Trans_EQData);
           // console.log(response.data);
         });
     } catch (e) {
@@ -215,7 +220,7 @@ export default function Filters({ data, setData,windowSize }) {
               </form>
               <div onClick={showAll} className="button">
                   <button className="showAll" type="submit">
-                   show All
+                   Clear All Filters
                   </button>
                 </div>
             </Box>
