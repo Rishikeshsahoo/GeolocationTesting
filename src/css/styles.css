@@ -127,7 +127,7 @@ form .user-details .input-box {
   font-size: 18px;
   font-weight: 500;
   border-radius: 5px;
-  background-color: #EF9A53;
+  background-color: var(--mainyellow);
 }
 /* @media only screen and (max-width: 600px) {
     body {

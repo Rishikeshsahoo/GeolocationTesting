@@ -233,13 +233,13 @@ export default function Filters({
                 </Grid>
                 <div className="button">
                   <button className="submit" type="submit">
-                    submit
+                    Submit
                   </button>
                 </div>
               </form>
               <div onClick={showAll} className="button">
                 <button className="showAll" type="submit">
-                  Clear All Filters
+                  Clear Filters
                 </button>
               </div>
             </Box>

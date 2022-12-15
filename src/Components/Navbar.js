@@ -1,13 +1,21 @@
-import React from "react";
-import {NavLink} from "react-router-dom"
-import "../css/styles.css"
+
 import logo from "../imgs/logo.jpeg"
 
-export default function Navbar({windowSize}) {
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+
+
+export default function ButtonAppBar() {
   return (
-    <div id="navbar" style={{display:"flex",flexDirection:"row",justifyContent:"center"}}>
-      <img src={logo} style={{width:(windowSize>=450)?"8%":"20%", margin:0,padding:0}}/>
-      
-    </div>
+    <Box sx={{ flexGrow: 2 }}>
+      <AppBar sx={{width:"100vw",backgroundColor:"#fff402",display:"flex", justifyContent:"center", alignItems: "center"}} position="static">
+       
+          <img src={logo} style={{width:"7rem",padding:0,marginLeft:10}} />
+        
+      </AppBar>
+    </Box>
   );
 }
+
