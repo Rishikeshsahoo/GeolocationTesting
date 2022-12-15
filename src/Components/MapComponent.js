@@ -39,7 +39,6 @@ export default function MapComponent({ dataframe, tabularData,OLTData,Trans_EQDa
 
   function Map({ dataframe }) {
     const [currentZoom, setCurrentZoom] = useState(5.5); //default
-    // console.log(dataframe)
     return (
       <GoogleMap
         center={center}

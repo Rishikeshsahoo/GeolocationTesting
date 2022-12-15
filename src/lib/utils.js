@@ -8,7 +8,6 @@ import blue from "../imgs/square-24.png";
 // _______________________________________Lead addition function_____________________________________________________
 
 export function addLead(latLng, map, it) {
-  console.log("aaya in lib/utils")
   let url = "http://maps.google.com/mapfiles/ms/icons/blue-dot.png";
   let textColor = "";
 
