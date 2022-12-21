@@ -34,7 +34,7 @@ export function addLead(latLng, map, it) {
       <h4>Customer Email: ${
         it["CustomerEmail"] ? it["CustomerEmail"] : "Not defined"
       }</h4>
-      <h4>Customer plan: ${
+      <h4>Plan Name: ${
         it["CustomerPlan"] ? it["CustomerPlan"] : "Not defined"
       }</h4>
       <h4>Lead Status: <span style="color:${textColor};" >${it["leadStatus"]}</span></h4>
