@@ -16,6 +16,7 @@ body {
 
 #navbar {
   background-color: var(--navyellow);
+
 }
 .nav__links__link,
 .linkA,
@@ -52,12 +53,18 @@ ul {
 /*1.56*/
 .filters_outer {
   margin-top: 30px;
-  max-width: 95%;
 }
+@media only screen and (min-width: 500px) {
+ .filters_outer{
+  height:78.5vh;
+ }
+}
+
 .outerReactFrag {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: left;
+
 }
 .title {
   font-size: 2rem;
@@ -103,8 +110,8 @@ form .user-details .input-box {
 
 .button button {
   height: 2.5rem;
-  margin-top: 30px;
-  margin-bottom: 10px;
+  margin-top: 1.2rem;
+  margin-bottom: 0.4rem;
 
   width: 40%;
   outline: none;
@@ -139,25 +146,36 @@ form .user-details .input-box {
   background-color: #ccc;
 }
 /*-----------------------MAP SECTION----------------------------*/
-.map_outer_container {
-  margin-top: 70px;
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-  background-color: var(--mainyellow);
-}
-.map_container {
-  height: 100vh;
-  width: 75%;
-  /* background-color: red; */
-  margin: 2rem 0;
-}
 
+.map_container {
+  height: 85vh;
+  width: 97%;
+  /* background-color: red; */
+  
+}
 .map_container2 {
   height: 100%;
   width: 100%;
   border-radius: 30px;
 }
+
+@media only screen and (max-width: 500px) {
+  .map_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 96vh;
+    width: 100%;    
+  }
+  .map_container2 {
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    margin-top: 1.5rem;
+  }
+  }
+
+
 
 @media only screen and (max-width: 600px) {
   .map_container {

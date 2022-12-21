@@ -29,11 +29,11 @@ export default function MapComponent({ dataframe, tabularData,OLTData,Trans_EQDa
 
   return (
     <>
-      <div className="map_outer_container">
+     
         <div className="map_container">
           <Map tabularData={tabularData} dataframe={dataframe} />
         </div>
-      </div>
+     
     </>
   );
 
@@ -59,7 +59,6 @@ export default function MapComponent({ dataframe, tabularData,OLTData,Trans_EQDa
           dataframe.map((it)=>{
             if(it['Latitude'] && it['Longitude'] )
             {
-
               addLead({lat:(Number)(it["Latitude"]),lng:(Number)(it['Longitude'])},map,it)
             }
           })

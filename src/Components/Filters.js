@@ -14,9 +14,6 @@ import tri from "../imgs/triangle-24.png";
 import blue from "../imgs/square-24.png";
 
 export default function Filters({
-  mainData,
-  OLTData,
-  TransEQData,
   setModal,
   setOLTData,
   setTransEQData,
@@ -40,7 +37,7 @@ export default function Filters({
   const leftBoxStyle = {
     borderRadius: "10px",
     backgroundColor: "white",
-    height: "22rem",
+    height: "100%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -160,16 +157,17 @@ export default function Filters({
     }
   };
  
-
-
   return (
-    <div className="outerReactFrag">
+    <div  style={windowSize >= 450 ? {marginLeft:"1rem"} : {marginLeft:0}} className="outerReactFrag">
       <Grid
+    
         className="filters_outer"
-        columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+        columnSpacing={{ md: 3 }}
+        rowSpacing={{md:1.5}}
         container
+        sx={{justifyContent:"space-between"}}
       >
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={12}>
           <Container
             className="leftBox"
             sx={windowSize >= 450 ? leftBoxStyle : leftBoxStyleAdjusted}
@@ -246,13 +244,13 @@ export default function Filters({
           </Container>
         </Grid>
 
-        <Grid item md={6}>
+        <Grid item md={12} style={{position:"relative", bottom:"0px"}}>
           <Container
             className="rightBox"
             sx={{
               borderRadius: "10px",
               backgroundColor: "white",
-              height: "22rem",
+              height: "120%",
               display: windowSize >= 450 ? "flex" : "none",
               flexDirection: "column",
               justifyContent: "center",
@@ -262,42 +260,42 @@ export default function Filters({
               <div className="title">Nomenclature</div>
               <br />
 
-              <Grid container spacing={2}>
+              <Grid container spacing={1.2}>
                 <Grid style={{ textAlign: "center" }} item md={3}>
                   <img src={red} />
                 </Grid>
                 <Grid style={{ fontFamily: "sans-serif" }} item md={8}>
-                  Red circle represents TNF Lead points
+                   TNF Lead points
                 </Grid>
                 <Grid style={{ textAlign: "center" }} item md={3}>
                   <img src={green} />
                 </Grid>
                 <Grid style={{ fontFamily: "sans-serif" }} item md={8}>
-                  Green circle represents Successful lead orders
+                   Successful lead orders
                 </Grid>
                 <Grid style={{ textAlign: "center" }} item md={3}>
                   <img src={black} />
                 </Grid>
                 <Grid style={{ fontFamily: "sans-serif" }} item md={8}>
-                  Black circles represent Cancelled Lead orders
+                 Cancelled Lead orders
                 </Grid>
                 <Grid style={{ textAlign: "center" }} item md={3}>
                   <img src={yellow} />
                 </Grid>
                 <Grid style={{ fontFamily: "sans-serif" }} item md={8}>
-                  Yellow circles represent Pending Lead orders
+                  Pending Lead orders
                 </Grid>
                 <Grid style={{ textAlign: "center" }} item md={3}>
                   <img src={tri} />
                 </Grid>
                 <Grid style={{ fontFamily: "sans-serif" }} item md={8}>
-                  Triangle represents all the OLT points
+                 OLT points
                 </Grid>
                 <Grid style={{ textAlign: "center" }} item md={3}>
                   <img src={blue} />
                 </Grid>
                 <Grid item style={{ fontFamily: "sans-serif" }} md={8}>
-                  Square represents all the Transmission equipment data
+                  Transmission equipment
                 </Grid>
               </Grid>
             </Box>
